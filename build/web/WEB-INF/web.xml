@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"> 
+    <context-param>
+        <param-name>dbdriver</param-name>
+        <param-value>org.apache.derby.jdbc.ClientDriver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>dburl</param-name>
+        <param-value>jdbc:derby://localhost:1527/lab</param-value>
+    </context-param>
+    <context-param>
+        <param-name>dbuser</param-name>
+        <param-value>db_user</param-value>
+    </context-param>
+    <context-param>
+        <param-name>dbpass</param-name>
+        <param-value>db_pass</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>Calculate</servlet-name>
+        <servlet-class>com.sprzeliorz.GCDLCMwebcalculator.servlets.Calculate</servlet-class>
+        <init-param>
+            <param-name>data</param-name>
+            <param-value>2 2</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>Cookies</servlet-name>
+        <servlet-class>com.sprzeliorz.GCDLCMwebcalculator.servlets.Cookies</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Calculate</servlet-name>
+        <url-pattern>/Calculate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Cookies</servlet-name>
+        <url-pattern>/Cookies</url-pattern>
+    </servlet-mapping>
+</web-app>
